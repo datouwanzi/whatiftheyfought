@@ -5,26 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Animal Encyclopedia - WhatIfTheyFought</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      font-family: 'Inter', sans-serif;
+    }
+
     .animal-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
-    figure {
+
+    .animal-card {
+      background: var(--card-background-color, #fff);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       text-align: center;
+      transition: transform 0.2s ease;
     }
-    figure img {
+
+    .animal-card:hover {
+      transform: scale(1.03);
+    }
+
+    .animal-card img {
       width: 100%;
-      max-width: 200px;
+      max-width: 160px;
       border-radius: 10px;
+      margin-bottom: 0.5rem;
     }
+
     .category-title {
       margin-top: 4rem;
       margin-bottom: 1rem;
       border-bottom: 1px solid #ccc;
       padding-bottom: 0.3rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --card-background-color: #1d1f21;
+      }
     }
   </style>
 </head>
@@ -46,90 +70,75 @@
     <section>
       <h3 class="category-title">🐾 Mammals</h3>
       <div class="animal-grid">
-        <figure>
+        <div class="animal-card">
           <img src="https://via.placeholder.com/200x200?text=Lion" alt="Lion">
-          <figcaption><strong>Lion</strong><br>Attack: 85<br>Speed: 80</figcaption>
-        </figure>
-        <figure>
+          <h4>Lion</h4>
+          <p>Attack: 85 | Speed: 80</p>
+        </div>
+        <div class="animal-card">
           <img src="https://via.placeholder.com/200x200?text=Tiger" alt="Tiger">
-          <figcaption><strong>Tiger</strong><br>Attack: 88<br>Speed: 78</figcaption>
-        </figure>
-        <figure>
+          <h4>Tiger</h4>
+          <p>Attack: 88 | Speed: 78</p>
+        </div>
+        <div class="animal-card">
           <img src="https://via.placeholder.com/200x200?text=Gorilla" alt="Gorilla">
-          <figcaption><strong>Gorilla</strong><br>Attack: 80<br>Speed: 65</figcaption>
-        </figure>
-        <figure>
-          <img src="https://via.placeholder.com/200x200?text=Grizzly+Bear" alt="Grizzly Bear">
-          <figcaption><strong>Grizzly Bear</strong><br>Attack: 90<br>Speed: 55</figcaption>
-        </figure>
-        <figure>
-          <img src="https://via.placeholder.com/200x200?text=Elephant" alt="Elephant">
-          <figcaption><strong>Elephant</strong><br>Attack: 95<br>Speed: 40</figcaption>
-        </figure>
-        <figure>
-          <img src="https://via.placeholder.com/200x200?text=Hippo" alt="Hippo">
-          <figcaption><strong>Hippo</strong><br>Attack: 92<br>Speed: 35</figcaption>
-        </figure>
+          <h4>Gorilla</h4>
+          <p>Attack: 80 | Speed: 65</p>
+        </div>
       </div>
     </section>
 
     <section>
       <h3 class="category-title">🦎 Reptiles</h3>
       <div class="animal-grid">
-        <figure>
+        <div class="animal-card">
           <img src="https://via.placeholder.com/200x200?text=Crocodile" alt="Crocodile">
-          <figcaption><strong>Crocodile</strong><br>Attack: 87<br>Speed: 45</figcaption>
-        </figure>
-        <figure>
-          <img src="https://via.placeholder.com/200x200?text=Komodo+Dragon" alt="Komodo Dragon">
-          <figcaption><strong>Komodo Dragon</strong><br>Attack: 70<br>Speed: 40</figcaption>
-        </figure>
-        <figure>
+          <h4>Crocodile</h4>
+          <p>Attack: 87 | Speed: 45</p>
+        </div>
+        <div class="animal-card">
           <img src="https://via.placeholder.com/200x200?text=Anaconda" alt="Anaconda">
-          <figcaption><strong>Anaconda</strong><br>Attack: 80<br>Speed: 30</figcaption>
-        </figure>
+          <h4>Anaconda</h4>
+          <p>Attack: 80 | Speed: 30</p>
+        </div>
       </div>
     </section>
 
     <section>
       <h3 class="category-title">🦅 Birds</h3>
       <div class="animal-grid">
-        <figure>
+        <div class="animal-card">
           <img src="https://via.placeholder.com/200x200?text=Harpy+Eagle" alt="Harpy Eagle">
-          <figcaption><strong>Harpy Eagle</strong><br>Attack: 60<br>Speed: 95</figcaption>
-        </figure>
-        <figure>
-          <img src="https://via.placeholder.com/200x200?text=Owl" alt="Owl">
-          <figcaption><strong>Owl</strong><br>Attack: 45<br>Speed: 80</figcaption>
-        </figure>
+          <h4>Harpy Eagle</h4>
+          <p>Attack: 60 | Speed: 95</p>
+        </div>
       </div>
     </section>
 
     <section>
       <h3 class="category-title">🌊 Ocean Predators</h3>
       <div class="animal-grid">
-        <figure>
-          <img src="https://via.placeholder.com/200x200?text=Shark" alt="Great White Shark">
-          <figcaption><strong>Shark</strong><br>Attack: 92<br>Speed: 60</figcaption>
-        </figure>
-        <figure>
+        <div class="animal-card">
+          <img src="https://via.placeholder.com/200x200?text=Shark" alt="Shark">
+          <h4>Shark</h4>
+          <p>Attack: 92 | Speed: 60</p>
+        </div>
+        <div class="animal-card">
           <img src="https://via.placeholder.com/200x200?text=Orca" alt="Orca">
-          <figcaption><strong>Orca</strong><br>Attack: 95<br>Speed: 65</figcaption>
-        </figure>
+          <h4>Orca</h4>
+          <p>Attack: 95 | Speed: 65</p>
+        </div>
       </div>
     </section>
 
     <section>
       <h3 class="category-title">🦖 Prehistoric</h3>
       <div class="animal-grid">
-        <figure>
+        <div class="animal-card">
           <img src="https://via.placeholder.com/200x200?text=T-Rex" alt="T-Rex">
-          <figcaption><strong>T-Rex</strong><br>Attack: 100<br>Speed: 50</figcaption>
-        </figure>
-        <figure>
-          <img src="https://via.placeholder.com/200x200?text=Mammoth" alt="Mammoth">
-          <figcaption><strong>Mammoth</strong><br>Attack: 85<br>Speed: 30</figcaption>
-        </figure>
+          <h4>T-Rex</h4>
+          <p>Attack: 100 | Speed: 50</p>
+        </div>
       </div>
     </section>
 
@@ -138,6 +147,5 @@
   <footer class="container">
     <small><a href="#">Privacy</a> • <a href="#">Contact</a></small>
   </footer>
-
 </body>
 </html>
