@@ -5,34 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Battle Generator - WhatIfTheyFought</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      font-family: 'Inter', sans-serif;
+    }
     .battle-flex {
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 3rem;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+      gap: 2rem;
+      margin: 2rem 0;
     }
     .battle-flex figure {
-      max-width: 300px;
+      max-width: 250px;
+      padding: 1rem;
+      background: var(--card-background-color, #fff);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       text-align: center;
     }
     .battle-flex h1 {
       font-size: 3rem;
+      margin: 0;
+    }
+    figure img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      background: #f2f2f2;
     }
     table td, table th {
       text-align: center;
     }
     .summary {
-      line-height: 1.8;
-      font-size: 1.1rem;
       margin-top: 2rem;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2rem;
     }
     @media (min-width: 768px) {
       main.container {
         max-width: 960px;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --card-background-color: #1d1f21;
       }
     }
   </style>
@@ -142,7 +162,7 @@
           </tbody>
         </table>
         <div class="summary">
-          <p><strong>Likely Winner: ${winner}</strong></p>
+          Likely Winner: <strong>${winner}</strong>
         </div>
       `;
     }
@@ -152,7 +172,7 @@
       generateBattle();
     });
 
-    // 初始化页面
+    // 初始化
     populateOptions();
     window.onload = () => {
       select1.value = "Lion";
