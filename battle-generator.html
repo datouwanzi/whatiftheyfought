@@ -45,6 +45,7 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="#">All Animals</a></li>
+      <li><a href="encyclopedia.html" role="button">Encyclopedia</a></li>
     </ul>
   </nav>
 
@@ -71,78 +72,33 @@
 
   <script>
     const animals = {
-      "Lion": {
-        image: "https://via.placeholder.com/250x250?text=Lion",
-        attack: 85,
-        defense: 75,
-        speed: 80,
-        intelligence: 60,
-        weight: 190
-      },
-      "Tiger": {
-        image: "https://via.placeholder.com/250x250?text=Tiger",
-        attack: 88,
-        defense: 70,
-        speed: 78,
-        intelligence: 65,
-        weight: 220
-      },
-      "Gorilla": {
-        image: "https://via.placeholder.com/250x250?text=Gorilla",
-        attack: 80,
-        defense: 70,
-        speed: 65,
-        intelligence: 75,
-        weight: 160
-      },
-      "Grizzly Bear": {
-        image: "https://via.placeholder.com/250x250?text=Grizzly+Bear",
-        attack: 90,
-        defense: 85,
-        speed: 55,
-        intelligence: 35,
-        weight: 360
-      },
-      "Elephant": {
-        image: "https://via.placeholder.com/250x250?text=Elephant",
-        attack: 95,
-        defense: 90,
-        speed: 40,
-        intelligence: 50,
-        weight: 6000
-      },
-      "Crocodile": {
-        image: "https://via.placeholder.com/250x250?text=Crocodile",
-        attack: 87,
-        defense: 80,
-        speed: 45,
-        intelligence: 30,
-        weight: 500
-      },
-      "Komodo Dragon": {
-        image: "https://via.placeholder.com/250x250?text=Komodo+Dragon",
-        attack: 70,
-        defense: 60,
-        speed: 40,
-        intelligence: 25,
-        weight: 90
-      },
-      "T-Rex": {
-        image: "https://via.placeholder.com/250x250?text=T-Rex",
-        attack: 100,
-        defense: 85,
-        speed: 50,
-        intelligence: 40,
-        weight: 8000
-      },
-      "Mammoth": {
-        image: "https://via.placeholder.com/250x250?text=Mammoth",
-        attack: 85,
-        defense: 90,
-        speed: 30,
-        intelligence: 45,
-        weight: 6500
-      }
+      // 🦁 哺乳类
+      "Lion": { image: "https://via.placeholder.com/250x250?text=Lion", attack: 85, defense: 75, speed: 80, intelligence: 60, weight: 190 },
+      "Tiger": { image: "https://via.placeholder.com/250x250?text=Tiger", attack: 88, defense: 70, speed: 78, intelligence: 65, weight: 220 },
+      "Gorilla": { image: "https://via.placeholder.com/250x250?text=Gorilla", attack: 80, defense: 70, speed: 65, intelligence: 75, weight: 160 },
+      "Grizzly Bear": { image: "https://via.placeholder.com/250x250?text=Grizzly+Bear", attack: 90, defense: 85, speed: 55, intelligence: 35, weight: 360 },
+      "Elephant": { image: "https://via.placeholder.com/250x250?text=Elephant", attack: 95, defense: 90, speed: 40, intelligence: 50, weight: 6000 },
+      "Hippopotamus": { image: "https://via.placeholder.com/250x250?text=Hippo", attack: 92, defense: 80, speed: 35, intelligence: 30, weight: 3000 },
+      "Rhino": { image: "https://via.placeholder.com/250x250?text=Rhino", attack: 93, defense: 85, speed: 40, intelligence: 40, weight: 2300 },
+      "Wolf": { image: "https://via.placeholder.com/250x250?text=Wolf", attack: 70, defense: 60, speed: 85, intelligence: 55, weight: 50 },
+      "Leopard": { image: "https://via.placeholder.com/250x250?text=Leopard", attack: 78, defense: 65, speed: 88, intelligence: 58, weight: 90 },
+
+      // 🐍 爬行类
+      "Crocodile": { image: "https://via.placeholder.com/250x250?text=Crocodile", attack: 87, defense: 80, speed: 45, intelligence: 30, weight: 500 },
+      "Komodo Dragon": { image: "https://via.placeholder.com/250x250?text=Komodo+Dragon", attack: 70, defense: 60, speed: 40, intelligence: 25, weight: 90 },
+      "Anaconda": { image: "https://via.placeholder.com/250x250?text=Anaconda", attack: 80, defense: 70, speed: 30, intelligence: 20, weight: 250 },
+
+      // 🦅 鸟类
+      "Harpy Eagle": { image: "https://via.placeholder.com/250x250?text=Harpy+Eagle", attack: 60, defense: 50, speed: 95, intelligence: 45, weight: 9 },
+      "Owl": { image: "https://via.placeholder.com/250x250?text=Owl", attack: 45, defense: 40, speed: 80, intelligence: 40, weight: 4 },
+
+      // 🌊 海洋
+      "Great White Shark": { image: "https://via.placeholder.com/250x250?text=Shark", attack: 92, defense: 80, speed: 60, intelligence: 30, weight: 1100 },
+      "Orca": { image: "https://via.placeholder.com/250x250?text=Orca", attack: 95, defense: 85, speed: 65, intelligence: 65, weight: 5400 },
+
+      // 🦖 史前
+      "T-Rex": { image: "https://via.placeholder.com/250x250?text=T-Rex", attack: 100, defense: 85, speed: 50, intelligence: 40, weight: 8000 },
+      "Mammoth": { image: "https://via.placeholder.com/250x250?text=Mammoth", attack: 85, defense: 90, speed: 30, intelligence: 45, weight: 6500 }
     };
 
     const select1 = document.getElementById("animal1");
