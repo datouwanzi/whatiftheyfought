@@ -3,51 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Animal Encyclopedia - WhatIfTheyFought</title>
+  <title>Encyclopedia - WhatIfTheyFought</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      font-family: 'Inter', sans-serif;
+    body {
+      padding-top: 2rem;
     }
 
-    .animal-grid {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem 0;
     }
 
     .animal-card {
-      background: var(--card-background-color, #fff);
+      border: 1px solid var(--pico-border-color);
       padding: 1rem;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       text-align: center;
-      transition: transform 0.2s ease;
+      background: var(--pico-background-color);
+      transition: transform 0.2s;
     }
 
     .animal-card:hover {
       transform: scale(1.03);
     }
 
-    .animal-card img {
-      width: 100%;
-      max-width: 160px;
-      border-radius: 10px;
-      margin-bottom: 0.5rem;
+    .animal-card h3 {
+      margin: 0.5rem 0;
     }
 
-    .category-title {
-      margin-top: 4rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.3rem;
+    .animal-card a {
+      text-decoration: none;
     }
 
     @media (prefers-color-scheme: dark) {
-      :root {
-        --card-background-color: #1d1f21;
+      .animal-card {
+        background-color: #1d1f21;
+        border-color: #333;
       }
     }
   </style>
@@ -65,87 +59,45 @@
   </nav>
 
   <main class="container">
-    <h2 style="text-align:center">🧬 Animal Encyclopedia</h2>
+    <h2>Animal Encyclopedia</h2>
+    <p>Select an animal to view its stats and background.</p>
 
-    <section>
-      <h3 class="category-title">🐾 Mammals</h3>
-      <div class="animal-grid">
-        <div class="animal-card">
-          <img src="https://via.placeholder.com/200x200?text=Lion" alt="Lion">
-          <h4>Lion</h4>
-          <p>Attack: 85 | Speed: 80</p>
-        </div>
-        <div class="animal-card">
-          <img src="https://via.placeholder.com/200x200?text=Tiger" alt="Tiger">
-          <h4>Tiger</h4>
-          <p>Attack: 88 | Speed: 78</p>
-        </div>
-        <div class="animal-card">
-          <img src="https://via.placeholder.com/200x200?text=Gorilla" alt="Gorilla">
-          <h4>Gorilla</h4>
-          <p>Attack: 80 | Speed: 65</p>
-        </div>
+    <div class="grid">
+
+      <div class="animal-card">
+        <a href="animals/lion.html">
+          <img src="https://via.placeholder.com/200x120?text=Lion" alt="Lion" />
+          <h3>🦁 Lion</h3>
+        </a>
       </div>
-    </section>
 
-    <section>
-      <h3 class="category-title">🦎 Reptiles</h3>
-      <div class="animal-grid">
-        <div class="animal-card">
-          <img src="https://via.placeholder.com/200x200?text=Crocodile" alt="Crocodile">
-          <h4>Crocodile</h4>
-          <p>Attack: 87 | Speed: 45</p>
-        </div>
-        <div class="animal-card">
-          <img src="https://via.placeholder.com/200x200?text=Anaconda" alt="Anaconda">
-          <h4>Anaconda</h4>
-          <p>Attack: 80 | Speed: 30</p>
-        </div>
+      <div class="animal-card">
+        <a href="animals/tiger.html">
+          <img src="https://via.placeholder.com/200x120?text=Tiger" alt="Tiger" />
+          <h3>🐯 Tiger</h3>
+        </a>
       </div>
-    </section>
 
-    <section>
-      <h3 class="category-title">🦅 Birds</h3>
-      <div class="animal-grid">
-        <div class="animal-card">
-          <img src="https://via.placeholder.com/200x200?text=Harpy+Eagle" alt="Harpy Eagle">
-          <h4>Harpy Eagle</h4>
-          <p>Attack: 60 | Speed: 95</p>
-        </div>
+      <div class="animal-card">
+        <a href="animals/gorilla.html">
+          <img src="https://via.placeholder.com/200x120?text=Gorilla" alt="Gorilla" />
+          <h3>🦍 Gorilla</h3>
+        </a>
       </div>
-    </section>
 
-    <section>
-      <h3 class="category-title">🌊 Ocean Predators</h3>
-      <div class="animal-grid">
-        <div class="animal-card">
-          <img src="https://via.placeholder.com/200x200?text=Shark" alt="Shark">
-          <h4>Shark</h4>
-          <p>Attack: 92 | Speed: 60</p>
-        </div>
-        <div class="animal-card">
-          <img src="https://via.placeholder.com/200x200?text=Orca" alt="Orca">
-          <h4>Orca</h4>
-          <p>Attack: 95 | Speed: 65</p>
-        </div>
+      <div class="animal-card">
+        <a href="animals/bear.html">
+          <img src="https://via.placeholder.com/200x120?text=Bear" alt="Bear" />
+          <h3>🐻 Bear</h3>
+        </a>
       </div>
-    </section>
 
-    <section>
-      <h3 class="category-title">🦖 Prehistoric</h3>
-      <div class="animal-grid">
-        <div class="animal-card">
-          <img src="https://via.placeholder.com/200x200?text=T-Rex" alt="T-Rex">
-          <h4>T-Rex</h4>
-          <p>Attack: 100 | Speed: 50</p>
-        </div>
-      </div>
-    </section>
-
+    </div>
   </main>
 
   <footer class="container">
     <small><a href="#">Privacy</a> • <a href="#">Contact</a></small>
   </footer>
+
 </body>
 </html>
