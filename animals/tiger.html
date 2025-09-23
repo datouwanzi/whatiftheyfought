@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tiger - WhatIfTheyFought</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .card {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      background: var(--card-background, #fff);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --card-background: #1d1f21;
+      }
+    }
+
+    .attribute-table td {
+      padding: 0.5rem 1rem;
+      text-align: left;
+    }
+
+    .attribute-table td:first-child {
+      font-weight: bold;
+      width: 40%;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <nav class="container-fluid">
+    <ul>
+      <li><strong>WhatIfTheyFought</strong></li>
+    </ul>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../encyclopedia.html">Encyclopedia</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <article class="card">
+      <img src="https://via.placeholder.com/600x400?text=Tiger" alt="Tiger" />
+      <h2>🐯 Tiger</h2>
+      <p><strong>Category:</strong> Mammal</p>
+      <table class="attribute-table">
+        <tr><td>Attack</td><td>88</td></tr>
+        <tr><td>Defense</td><td>72</td></tr>
+        <tr><td>Speed</td><td>78</td></tr>
+        <tr><td>Intelligence</td><td>58</td></tr>
+        <tr><td>Weight</td><td>220 kg</td></tr>
+      </table>
+      <p>
+        The tiger is the largest wild cat in the world. With massive strength, stealth, and deadly pounce,
+        tigers are apex predators. Their agility and ambush tactics make them fearsome one-on-one fighters.
+      </p>
+
+      <a class="back-link" href="../encyclopedia.html">← Back to Encyclopedia</a>
+    </article>
+  </main>
+
+  <footer class="container">
+    <small><a href="#">Privacy</a> • <a href="#">Contact</a></small>
+  </footer>
+</body>
+</html>
