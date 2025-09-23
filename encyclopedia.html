@@ -10,36 +10,37 @@
       padding-top: 2rem;
     }
 
-    .grid {
+    .category-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
-    .animal-card {
+    .category-card {
+      padding: 2rem;
       border: 1px solid var(--pico-border-color);
-      padding: 1rem;
       border-radius: 12px;
       text-align: center;
-      background: var(--pico-background-color);
       transition: transform 0.2s;
+      background: var(--pico-background-color);
     }
 
-    .animal-card:hover {
+    .category-card:hover {
       transform: scale(1.03);
     }
 
-    .animal-card h3 {
-      margin: 0.5rem 0;
+    .category-card h3 {
+      margin-bottom: 0.5rem;
     }
 
-    .animal-card a {
-      text-decoration: none;
+    .category-card a {
+      display: block;
+      margin-top: 1rem;
     }
 
     @media (prefers-color-scheme: dark) {
-      .animal-card {
+      .category-card {
         background-color: #1d1f21;
         border-color: #333;
       }
@@ -59,37 +60,33 @@
   </nav>
 
   <main class="container">
-    <h2>Animal Encyclopedia</h2>
-    <p>Select an animal to view its stats and background.</p>
+    <h2>Encyclopedia</h2>
+    <p>Select a category to explore creatures in that domain.</p>
 
-    <div class="grid">
+    <div class="category-grid">
 
-      <div class="animal-card">
-        <a href="animals/lion.html">
-          <img src="https://via.placeholder.com/200x120?text=Lion" alt="Lion" />
-          <h3>🦁 Lion</h3>
-        </a>
+      <div class="category-card">
+        <h3>🐾 Real Animals</h3>
+        <p>Explore real-world animals like lions, bears, and wolves.</p>
+        <a href="encyclopedia-real.html" role="button">View Category</a>
       </div>
 
-      <div class="animal-card">
-        <a href="animals/tiger.html">
-          <img src="https://via.placeholder.com/200x120?text=Tiger" alt="Tiger" />
-          <h3>🐯 Tiger</h3>
-        </a>
+      <div class="category-card">
+        <h3>🦕 Extinct Creatures</h3>
+        <p>Discover extinct species like dinosaurs and saber-toothed cats.</p>
+        <a href="encyclopedia-extinct.html" role="button">View Category</a>
       </div>
 
-      <div class="animal-card">
-        <a href="animals/gorilla.html">
-          <img src="https://via.placeholder.com/200x120?text=Gorilla" alt="Gorilla" />
-          <h3>🦍 Gorilla</h3>
-        </a>
+      <div class="category-card">
+        <h3>✨ Fantasy Creatures</h3>
+        <p>Game and anime characters like Pikachu, Creeper, and more.</p>
+        <a href="encyclopedia-fantasy.html" role="button">View Category</a>
       </div>
 
-      <div class="animal-card">
-        <a href="animals/bear.html">
-          <img src="https://via.placeholder.com/200x120?text=Bear" alt="Bear" />
-          <h3>🐻 Bear</h3>
-        </a>
+      <div class="category-card">
+        <h3>🐉 Mythical Beasts</h3>
+        <p>Legends from mythology: dragons, phoenixes, and beasts from classics.</p>
+        <a href="encyclopedia-myth.html" role="button">View Category</a>
       </div>
 
     </div>
