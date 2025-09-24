@@ -1,50 +1,72 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="auto">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>WhatIfTheyFought - 首页</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-    <style>
-      main {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>图鉴详情 - 狮子</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <style>
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding-top: 2rem;
+    }
+    @media(min-width: 768px) {
+      .profile {
+        flex-direction: row;
       }
-      .grid a {
-        margin-top: 1rem;
-      }
-    </style>
-  </head>
-  <body>
-    <nav class="container-fluid">
-      <ul>
-        <li><strong>WhatIfTheyFought</strong></li>
-      </ul>
-      <ul>
-        <li><a href="encyclopedia.html">图鉴百科</a></li>
-        <li><a href="battle-generator.html">战斗模拟</a></li>
-        <li><a href="#" role="button">登录</a></li>
-      </ul>
-    </nav>
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .stats-grid article {
+      padding: 1rem;
+      background: var(--pico-background);
+      border-radius: 0.5rem;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <nav class="container-fluid">
+    <ul><li><strong>WhatIfTheyFought</strong></li></ul>
+    <ul>
+      <li><a href="../index.html">首页</a></li>
+      <li><a href="../encyclopedia.html">图鉴百科</a></li>
+      <li><a href="../battle-generator.html">战斗模拟器</a></li>
+    </ul>
+  </nav>
+  <main class="container">
+    <h2>狮子 (Lion)</h2>
+    <div class="profile">
+      <img src="../assets/placeholder.jpg" alt="狮子" width="300">
+      <div>
+        <p>狮子是非洲草原上的顶级掠食者，具备爆发力强、咬合力大、领地意识强的特点。</p>
+        <p>它们通常以群体合作方式狩猎，是现实中最具统治力的野兽之一。</p>
+      </div>
+    </div>
 
-    <main class="container">
-      <section>
-        <hgroup>
-          <h2>欢迎来到 WhatIfTheyFought</h2>
-          <h3>打造你的生物对战世界</h3>
-        </hgroup>
-        <p>探索生物图鉴，生成精彩的对战模拟，并制作短视频。</p>
-        <div class="grid">
-          <a href="encyclopedia.html" class="contrast" role="button">进入图鉴百科</a>
-          <a href="battle-generator.html" role="button">开始战斗模拟</a>
-        </div>
-      </section>
-    </main>
+    <h3>属性面板</h3>
+    <div class="stats-grid">
+      <article><strong>耐力</strong><br>8/10</article>
+      <article><strong>咬合力</strong><br>9/10</article>
+      <article><strong>兇猛程度</strong><br>9/10</article>
+      <article><strong>战斗经验</strong><br>8/10</article>
+      <article><strong>敏捷</strong><br>7/10</article>
+      <article><strong>战斗力</strong><br>9/10</article>
+      <article><strong>力量</strong><br>8/10</article>
+    </div>
 
-    <footer class="container">
-      <small>
-        <a href="#">关于我们</a> • <a href="#">联系支持</a>
-      </small>
-    </footer>
-  </body>
+    <h3 style="margin-top:2rem">🌐 分类</h3>
+    <p>现实生物</p>
+
+    <p><a href="../encyclopedia/real.html">← 返回现实动物列表</a></p>
+  </main>
+</body>
 </html>
