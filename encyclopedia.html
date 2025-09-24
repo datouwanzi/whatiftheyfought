@@ -2,99 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Encyclopedia - WhatIfTheyFought</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>图鉴 - WhatIfTheyFought</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
   <style>
-    body {
-      padding-top: 2rem;
-    }
-
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .category-card {
-      padding: 2rem;
-      border: 1px solid var(--pico-border-color);
-      border-radius: 12px;
-      text-align: center;
-      transition: transform 0.2s;
-      background: var(--pico-background-color);
-    }
-
-    .category-card:hover {
-      transform: scale(1.03);
-    }
-
-    .category-card h3 {
-      margin-bottom: 0.5rem;
-    }
-
-    .category-card a {
-      display: block;
-      margin-top: 1rem;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .category-card {
-        background-color: #1d1f21;
-        border-color: #333;
-      }
-    }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .card img { width: 100%; height: auto; border-radius: 0.5rem; }
+    .card { padding: 1rem; border-radius: 0.5rem; background: var(--pico-background); box-shadow: 0 0 6px rgba(0,0,0,0.05); }
   </style>
 </head>
 <body>
-
   <nav class="container-fluid">
+    <ul><li><strong>WhatIfTheyFought</strong></li></ul>
     <ul>
-      <li><strong>WhatIfTheyFought</strong></li>
-    </ul>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="battle-generator.html">Battle Generator</a></li>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="battle-generator.html">战斗模拟器</a></li>
+      <li><a href="#" role="button">订阅</a></li>
     </ul>
   </nav>
-
   <main class="container">
-    <h2>Encyclopedia</h2>
-    <p>Select a category to explore creatures in that domain.</p>
-
-    <div class="category-grid">
-
-      <div class="category-card">
-        <h3>🐾 Real Animals</h3>
-        <p>Explore real-world animals like lions, bears, and wolves.</p>
-        <a href="encyclopedia-real.html" role="button">View Category</a>
-      </div>
-
-      <div class="category-card">
-        <h3>🦕 Extinct Creatures</h3>
-        <p>Discover extinct species like dinosaurs and saber-toothed cats.</p>
-        <a href="encyclopedia-extinct.html" role="button">View Category</a>
-      </div>
-
-      <div class="category-card">
-        <h3>✨ Fantasy Creatures</h3>
-        <p>Game and anime characters like Pikachu, Creeper, and more.</p>
-        <a href="encyclopedia-fantasy.html" role="button">View Category</a>
-      </div>
-
-      <div class="category-card">
-        <h3>🐉 Mythical Beasts</h3>
-        <p>Legends from mythology: dragons, phoenixes, and beasts from classics.</p>
-        <a href="encyclopedia-myth.html" role="button">View Category</a>
-      </div>
-
-    </div>
+    <h2>图鉴分类</h2>
+    <ul>
+      <li><a href="encyclopedia/real.html">现实生物</a></li>
+      <li><a href="encyclopedia/extinct.html">灭绝生物</a></li>
+      <li><a href="encyclopedia/myth.html">幻想/神话生物</a></li>
+    </ul>
   </main>
-
-  <footer class="container">
-    <small><a href="#">Privacy</a> • <a href="#">Contact</a></small>
-  </footer>
-
 </body>
 </html>

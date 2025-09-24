@@ -1,78 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WhatIfTheyFought - Home</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      font-family: 'Inter', sans-serif;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 4rem 1rem;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 700px;
-      margin: 0 auto 2rem auto;
-    }
-
-    .nav-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    @media (min-width: 600px) {
-      .nav-buttons {
-        flex-direction: row;
-        justify-content: center;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What If They Fought - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      body {
+        padding: 2rem;
       }
-    }
-  </style>
-</head>
-<body>
-
-  <nav class="container-fluid">
-    <ul>
-      <li><strong>WhatIfTheyFought</strong></li>
-    </ul>
-    <ul>
-      <li><a href="encyclopedia.html">Encyclopedia</a></li>
-      <li><a href="battle-generator.html">Battle Generator</a></li>
-    </ul>
-  </nav>
-
-  <main class="container">
-    <section class="hero">
-      <h1>What If They Fought?</h1>
-      <p>
-        Discover epic battles between real and legendary creatures, compare their stats,
-        and explore a deep encyclopedia of wild beasts, monsters, Pokémon, and more!
-      </p>
-
-      <div class="nav-buttons">
-        <a href="battle-generator.html" role="button" class="contrast">⚔️ Start a Battle</a>
-        <a href="encyclopedia.html" role="button">📚 Explore Encyclopedia</a>
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+      }
+      .card-grid img {
+        max-width: 100%;
+        border-radius: 0.5rem;
+      }
+      .card-grid article {
+        background: var(--pico-background);
+        padding: 1rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="container-fluid">
+      <ul>
+        <li><strong>WhatIfTheyFought</strong></li>
+      </ul>
+      <ul>
+        <li><a href="encyclopedia.html">百科图鉴</a></li>
+        <li><a href="battle-generator.html">对战模拟器</a></li>
+        <li><a href="#" role="button">订阅</a></li>
+      </ul>
+    </nav>
+    <main class="container">
+      <h2>欢迎来到 WhatIfTheyFought</h2>
+      <p>一个关于幻想与现实生物对战的模拟平台。你可以探索百科图鉴，或者亲自发起一场刺激的对决！</p>
+      <div class="grid">
+        <article>
+          <h3>进入百科图鉴</h3>
+          <p>查看各种生物资料，了解它们的特性与战斗能力。</p>
+          <a href="encyclopedia.html" role="button">查看图鉴</a>
+        </article>
+        <article>
+          <h3>开始模拟战斗</h3>
+          <p>选择两种生物，看看谁能在竞技场中胜出！</p>
+          <a href="battle-generator.html" role="button" class="secondary">生成对战</a>
+        </article>
       </div>
-    </section>
-  </main>
-
-  <footer class="container">
-    <small><a href="#">Privacy</a> • <a href="#">Contact</a></small>
-  </footer>
-
-</body>
+    </main>
+  </body>
 </html>

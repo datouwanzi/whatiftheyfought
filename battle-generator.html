@@ -1,184 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Battle Generator - WhatIfTheyFought</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      font-family: 'Inter', sans-serif;
-    }
-    .battle-flex {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-    .battle-flex figure {
-      max-width: 250px;
-      padding: 1rem;
-      background: var(--card-background-color, #fff);
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      text-align: center;
-    }
-    .battle-flex h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-    figure img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      background: #f2f2f2;
-    }
-    table td, table th {
-      text-align: center;
-    }
-    .summary {
-      margin-top: 2rem;
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-    @media (min-width: 768px) {
-      main.container {
-        max-width: 960px;
-      }
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --card-background-color: #1d1f21;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>对战模拟器 - WhatIfTheyFought</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 </head>
 <body>
   <nav class="container-fluid">
+    <ul><li><strong>WhatIfTheyFought</strong></li></ul>
     <ul>
-      <li><strong>WhatIfTheyFought</strong></li>
-    </ul>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="encyclopedia.html">Encyclopedia</a></li>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="encyclopedia.html">百科图鉴</a></li>
+      <li><a href="#" role="button">订阅</a></li>
     </ul>
   </nav>
-
   <main class="container">
-    <h2 style="text-align:center">⚔️ Animal Battle Generator</h2>
-    <form id="battleForm" class="grid">
-      <label>
-        Choose Animal 1:
-        <select id="animal1"></select>
-      </label>
-      <label>
-        Choose Animal 2:
-        <select id="animal2"></select>
-      </label>
-      <button type="submit">Generate Battle</button>
+    <h2>战斗模拟器</h2>
+    <form id="battle-form">
+      <div class="grid">
+        <select id="animal1" required>
+          <option value="">选择生物 A</option>
+          <option value="lion">狮子</option>
+          <option value="tiger">老虎</option>
+          <option value="wolf">狼</option>
+        </select>
+        <select id="animal2" required>
+          <option value="">选择生物 B</option>
+          <option value="lion">狮子</option>
+          <option value="tiger">老虎</option>
+          <option value="wolf">狼</option>
+        </select>
+      </div>
+      <button type="submit">开始对战</button>
     </form>
-
-    <div id="battleResult"></div>
+    <div id="result" style="margin-top:2rem;"></div>
   </main>
-
-  <footer class="container">
-    <small><a href="#">Privacy</a> • <a href="#">Contact</a></small>
-  </footer>
-
   <script>
-    const animals = {
-      "Lion": { image: "https://via.placeholder.com/250x250?text=Lion", attack: 85, defense: 75, speed: 80, intelligence: 60, weight: 190 },
-      "Tiger": { image: "https://via.placeholder.com/250x250?text=Tiger", attack: 88, defense: 70, speed: 78, intelligence: 65, weight: 220 },
-      "Gorilla": { image: "https://via.placeholder.com/250x250?text=Gorilla", attack: 80, defense: 70, speed: 65, intelligence: 75, weight: 160 },
-      "Grizzly Bear": { image: "https://via.placeholder.com/250x250?text=Grizzly+Bear", attack: 90, defense: 85, speed: 55, intelligence: 35, weight: 360 },
-      "Elephant": { image: "https://via.placeholder.com/250x250?text=Elephant", attack: 95, defense: 90, speed: 40, intelligence: 50, weight: 6000 },
-      "Hippopotamus": { image: "https://via.placeholder.com/250x250?text=Hippo", attack: 92, defense: 80, speed: 35, intelligence: 30, weight: 3000 },
-      "Rhino": { image: "https://via.placeholder.com/250x250?text=Rhino", attack: 93, defense: 85, speed: 40, intelligence: 40, weight: 2300 },
-      "Wolf": { image: "https://via.placeholder.com/250x250?text=Wolf", attack: 70, defense: 60, speed: 85, intelligence: 55, weight: 50 },
-      "Leopard": { image: "https://via.placeholder.com/250x250?text=Leopard", attack: 78, defense: 65, speed: 88, intelligence: 58, weight: 90 },
-      "Crocodile": { image: "https://via.placeholder.com/250x250?text=Crocodile", attack: 87, defense: 80, speed: 45, intelligence: 30, weight: 500 },
-      "Komodo Dragon": { image: "https://via.placeholder.com/250x250?text=Komodo+Dragon", attack: 70, defense: 60, speed: 40, intelligence: 25, weight: 90 },
-      "Anaconda": { image: "https://via.placeholder.com/250x250?text=Anaconda", attack: 80, defense: 70, speed: 30, intelligence: 20, weight: 250 },
-      "Harpy Eagle": { image: "https://via.placeholder.com/250x250?text=Harpy+Eagle", attack: 60, defense: 50, speed: 95, intelligence: 45, weight: 9 },
-      "Owl": { image: "https://via.placeholder.com/250x250?text=Owl", attack: 45, defense: 40, speed: 80, intelligence: 40, weight: 4 },
-      "Great White Shark": { image: "https://via.placeholder.com/250x250?text=Shark", attack: 92, defense: 80, speed: 60, intelligence: 30, weight: 1100 },
-      "Orca": { image: "https://via.placeholder.com/250x250?text=Orca", attack: 95, defense: 85, speed: 65, intelligence: 65, weight: 5400 },
-      "T-Rex": { image: "https://via.placeholder.com/250x250?text=T-Rex", attack: 100, defense: 85, speed: 50, intelligence: 40, weight: 8000 },
-      "Mammoth": { image: "https://via.placeholder.com/250x250?text=Mammoth", attack: 85, defense: 90, speed: 30, intelligence: 45, weight: 6500 }
-    };
-
-    const select1 = document.getElementById("animal1");
-    const select2 = document.getElementById("animal2");
-    const resultDiv = document.getElementById("battleResult");
-
-    function populateOptions() {
-      Object.keys(animals).forEach(name => {
-        const option1 = document.createElement("option");
-        option1.value = name;
-        option1.textContent = name;
-        const option2 = option1.cloneNode(true);
-        select1.appendChild(option1);
-        select2.appendChild(option2);
-      });
-    }
-
-    function generateBattle() {
-      const a1 = animals[select1.value];
-      const a2 = animals[select2.value];
-
-      let winner = "Draw";
-      const score1 = a1.attack + a1.defense + a1.speed + a1.intelligence;
-      const score2 = a2.attack + a2.defense + a2.speed + a2.intelligence;
-      if (score1 > score2) winner = select1.value;
-      else if (score2 > score1) winner = select2.value;
-
-      resultDiv.innerHTML = `
-        <h3 style="text-align:center">${select1.value} vs ${select2.value}</h3>
-        <div class="battle-flex">
-          <figure>
-            <img src="${a1.image}" alt="${select1.value}" />
-            <figcaption>${select1.value}</figcaption>
-          </figure>
-          <h1>VS</h1>
-          <figure>
-            <img src="${a2.image}" alt="${select2.value}" />
-            <figcaption>${select2.value}</figcaption>
-          </figure>
-        </div>
-        <table>
-          <thead>
-            <tr><th>Attribute</th><th>${select1.value}</th><th>${select2.value}</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Attack</td><td>${a1.attack}</td><td>${a2.attack}</td></tr>
-            <tr><td>Defense</td><td>${a1.defense}</td><td>${a2.defense}</td></tr>
-            <tr><td>Speed</td><td>${a1.speed}</td><td>${a2.speed}</td></tr>
-            <tr><td>Intelligence</td><td>${a1.intelligence}</td><td>${a2.intelligence}</td></tr>
-            <tr><td>Weight</td><td>${a1.weight} kg</td><td>${a2.weight} kg</td></tr>
-          </tbody>
-        </table>
-        <div class="summary">
-          Likely Winner: <strong>${winner}</strong>
-        </div>
-      `;
-    }
-
-    document.getElementById("battleForm").addEventListener("submit", function (e) {
+    const form = document.getElementById('battle-form');
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      generateBattle();
+      const a1 = document.getElementById('animal1').value;
+      const a2 = document.getElementById('animal2').value;
+      if (a1 === a2) {
+        document.getElementById('result').innerHTML = `<strong>请选择不同的生物进行对战！</strong>`;
+        return;
+      }
+      document.getElementById('result').innerHTML = `<h3>${a1} vs ${a2}</h3><p>对战计算中...（此处将展示动画与战果）</p>`;
     });
-
-    // 初始化
-    populateOptions();
-    window.onload = () => {
-      select1.value = "Lion";
-      select2.value = "Tiger";
-      generateBattle();
-    };
   </script>
 </body>
 </html>
