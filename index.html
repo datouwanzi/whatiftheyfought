@@ -1,40 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>WhatIfTheyFought - 首页</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
     <style>
-      body {
-        padding: 2rem;
+      main {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
       }
-      .hero {
-        text-align: center;
-        padding: 5rem 2rem;
-      }
-      .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-      .hero p {
-        font-size: 1.2rem;
-        color: #666;
-      }
-      .grid nav a {
-        display: block;
-        padding: 1.2rem;
-        text-align: center;
-        font-size: 1.1rem;
-        border: 1px solid var(--primary);
-        border-radius: 8px;
-        text-decoration: none;
-        background: var(--primary);
-        color: white;
-        transition: background 0.2s;
-      }
-      .grid nav a:hover {
-        background: var(--primary-hover);
+      .grid a {
+        margin-top: 1rem;
       }
     </style>
   </head>
@@ -44,31 +21,30 @@
         <li><strong>WhatIfTheyFought</strong></li>
       </ul>
       <ul>
-        <li><a href="index.html">首页</a></li>
-        <li><a href="encyclopedia.html">图鉴</a></li>
-        <li><a href="battle-generator.html" role="button">战斗模拟器</a></li>
+        <li><a href="encyclopedia.html">图鉴百科</a></li>
+        <li><a href="battle-generator.html">战斗模拟</a></li>
+        <li><a href="#" role="button">登录</a></li>
       </ul>
     </nav>
 
     <main class="container">
-      <section class="hero">
-        <h1>欢迎来到 WhatIfTheyFought</h1>
-        <p>在这里，你可以模拟史上最狂野的跨时空对战。</p>
-      </section>
-
-      <div class="grid">
-        <nav>
-          <a href="encyclopedia.html">🧬 图鉴入口</a>
-        </nav>
-        <nav>
-          <a href="battle-generator.html">⚔️ 战斗模拟器</a>
-        </nav>
-      </div>
-
-      <section style="margin-top: 3rem; text-align: center">
-        <p>项目由 <strong>datouwanzi</strong> 驱动开发，每日更新 ⚡</p>
-        <p style="font-size: 0.9rem; color: #999">支持现实动物 / 神话生物 / 幻想角色</p>
+      <section>
+        <hgroup>
+          <h2>欢迎来到 WhatIfTheyFought</h2>
+          <h3>打造你的生物对战世界</h3>
+        </hgroup>
+        <p>探索生物图鉴，生成精彩的对战模拟，并制作短视频。</p>
+        <div class="grid">
+          <a href="encyclopedia.html" class="contrast" role="button">进入图鉴百科</a>
+          <a href="battle-generator.html" role="button">开始战斗模拟</a>
+        </div>
       </section>
     </main>
+
+    <footer class="container">
+      <small>
+        <a href="#">关于我们</a> • <a href="#">联系支持</a>
+      </small>
+    </footer>
   </body>
 </html>
