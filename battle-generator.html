@@ -2,52 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>对战模拟器 - WhatIfTheyFought</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battle Generator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="container-fluid">
-    <ul><li><strong>WhatIfTheyFought</strong></li></ul>
-    <ul>
-      <li><a href="index.html">首页</a></li>
-      <li><a href="encyclopedia.html">百科图鉴</a></li>
-      <li><a href="#" role="button">订阅</a></li>
-    </ul>
-  </nav>
-  <main class="container">
-    <h2>战斗模拟器</h2>
+  <header>
+    <h1>Battle Generator</h1>
+    <nav>
+      <a href="index.html">🏠 Home</a>
+    </nav>
+  </header>
+
+  <main>
     <form id="battle-form">
-      <div class="grid">
-        <select id="animal1" required>
-          <option value="">选择生物 A</option>
-          <option value="lion">狮子</option>
-          <option value="tiger">老虎</option>
-          <option value="wolf">狼</option>
-        </select>
-        <select id="animal2" required>
-          <option value="">选择生物 B</option>
-          <option value="lion">狮子</option>
-          <option value="tiger">老虎</option>
-          <option value="wolf">狼</option>
-        </select>
-      </div>
-      <button type="submit">开始对战</button>
+      <label>
+        Fighter 1:
+        <input type="text" id="fighter1" placeholder="e.g., Lion" required />
+      </label>
+      <label>
+        Fighter 2:
+        <input type="text" id="fighter2" placeholder="e.g., Tiger" required />
+      </label>
+      <button type="submit">Generate Battle</button>
     </form>
-    <div id="result" style="margin-top:2rem;"></div>
+
+    <div id="battle-result"></div>
   </main>
-  <script>
-    const form = document.getElementById('battle-form');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const a1 = document.getElementById('animal1').value;
-      const a2 = document.getElementById('animal2').value;
-      if (a1 === a2) {
-        document.getElementById('result').innerHTML = `<strong>请选择不同的生物进行对战！</strong>`;
-        return;
-      }
-      document.getElementById('result').innerHTML = `<h3>${a1} vs ${a2}</h3><p>对战计算中...（此处将展示动画与战果）</p>`;
-    });
-  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>

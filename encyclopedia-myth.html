@@ -1,78 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mythical Beasts - Encyclopedia</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-  <style>
-    body {
-      padding-top: 2rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem 0;
-    }
-
-    .animal-card {
-      border: 1px solid var(--pico-border-color);
-      padding: 1rem;
-      border-radius: 12px;
-      text-align: center;
-      background: var(--pico-background-color);
-      transition: transform 0.2s;
-    }
-
-    .animal-card:hover {
-      transform: scale(1.03);
-    }
-
-    .animal-card h3 {
-      margin: 0.5rem 0;
-    }
-
-    .animal-card a {
-      text-decoration: none;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .animal-card {
-        background-color: #1d1f21;
-        border-color: #333;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mythical Beings</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <nav class="container-fluid">
-    <ul>
-      <li><strong>WhatIfTheyFought</strong></li>
-    </ul>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="encyclopedia.html">← Back to Categories</a></li>
-    </ul>
-  </nav>
-
-  <main class="container">
-    <h2>🐉 Mythical Beasts</h2>
-    <p>Beings from mythology and legend. They may not be real—but they are fierce!</p>
-
-    <div class="grid">
-      <!-- Add mythical creatures here -->
-      <div class="animal-card">
-        <p><em>No creatures added yet.</em></p>
-      </div>
-    </div>
+  <header>
+    <h1>Mythical Beings</h1>
+    <nav>
+      <a href="encyclopedia.html">🔙 Back</a>
+    </nav>
+  </header>
+  <main>
+    <p>Coming soon...</p>
   </main>
-
-  <footer class="container">
-    <small><a href="#">Privacy</a> • <a href="#">Contact</a></small>
-  </footer>
-
 </body>
 </html>

@@ -2,73 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>图鉴百科 - WhatIfTheyFought</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-  <style>
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      padding-top: 1rem;
-    }
-    .card {
-      padding: 1rem;
-      border-radius: 0.5rem;
-      background: var(--pico-background);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-    .card img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 0.5rem;
-    }
-    .card h3 {
-      margin-top: 0.5rem;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encyclopedia</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="container-fluid">
-    <ul><li><strong>WhatIfTheyFought</strong></li></ul>
-    <ul>
-      <li><a href="index.html">首页</a></li>
-      <li><a href="battle-generator.html">战斗模拟器</a></li>
-      <li><a href="#" role="button">订阅</a></li>
-    </ul>
-  </nav>
+  <header>
+    <h1>Encyclopedia</h1>
+    <nav>
+      <a href="index.html">🏠 Home</a>
+    </nav>
+  </header>
 
-  <main class="container">
-    <h2>图鉴百科</h2>
-    <p>分类浏览所有可用的现实、神话与幻想生物：</p>
-
-    <div class="grid">
-      <a href="encyclopedia/real.html" role="button">🦁 现实生物</a>
-      <a href="encyclopedia/extinct.html" role="button">🦕 灭绝生物</a>
-      <a href="encyclopedia/myth.html" role="button">🐉 神话幻想</a>
-    </div>
-
-    <h3 style="margin-top: 3rem">🔍 最近添加的生物</h3>
-    <div class="card-grid">
-      <article class="card">
-        <img src="assets/placeholder.jpg" alt="Lion" />
-        <h3>狮子 (Lion)</h3>
-        <p>现实生物 | 高爆发力与统治性</p>
-        <a href="animals/lion.html">查看详情 →</a>
-      </article>
-      <article class="card">
-        <img src="assets/placeholder.jpg" alt="Wolf" />
-        <h3>狼 (Wolf)</h3>
-        <p>现实生物 | 协作狩猎、敏捷迅猛</p>
-        <a href="animals/wolf.html">查看详情 →</a>
-      </article>
-      <article class="card">
-        <img src="assets/placeholder.jpg" alt="Pikachu" />
-        <h3>皮卡丘 (Pikachu)</h3>
-        <p>幻想角色 | 以电能为武器</p>
-        <a href="animals/pikachu.html">查看详情 →</a>
-      </article>
-    </div>
+  <main>
+    <section>
+      <h2>Choose a Category</h2>
+      <ul class="category-list">
+        <li><a href="encyclopedia-real.html">🐾 Real Animals</a></li>
+        <li><a href="encyclopedia-extinct.html">🦖 Extinct Creatures</a></li>
+        <li><a href="encyclopedia-myth.html">🐉 Mythical Beings</a></li>
+      </ul>
+    </section>
   </main>
+
+  <footer>
+    <p>© 2025 WhatIfTheyFought</p>
+  </footer>
 </body>
 </html>

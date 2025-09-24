@@ -1,110 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Real Animals - Encyclopedia</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-  <style>
-    body {
-      padding-top: 2rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem 0;
-    }
-
-    .animal-card {
-      border: 1px solid var(--pico-border-color);
-      padding: 1rem;
-      border-radius: 12px;
-      text-align: center;
-      background: var(--pico-background-color);
-      transition: transform 0.2s;
-    }
-
-    .animal-card:hover {
-      transform: scale(1.03);
-    }
-
-    .animal-card h3 {
-      margin: 0.5rem 0;
-    }
-
-    .animal-card a {
-      text-decoration: none;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .animal-card {
-        background-color: #1d1f21;
-        border-color: #333;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Animals</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>Real Animals</h1>
+    <nav>
+      <a href="encyclopedia.html">🔙 Back to Encyclopedia</a>
+    </nav>
+  </header>
 
-  <nav class="container-fluid">
-    <ul>
-      <li><strong>WhatIfTheyFought</strong></li>
-    </ul>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="encyclopedia.html">← Back to Categories</a></li>
-    </ul>
-  </nav>
-
-  <main class="container">
-    <h2>🐾 Real Animals</h2>
-    <p>These creatures are found in nature and are known for their incredible abilities.</p>
-
-    <div class="grid">
-
-      <div class="animal-card">
-        <a href="animals/lion.html">
-          <img src="https://via.placeholder.com/200x120?text=Lion" alt="Lion" />
-          <h3>🦁 Lion</h3>
-        </a>
-      </div>
-
-      <div class="animal-card">
-        <a href="animals/tiger.html">
-          <img src="https://via.placeholder.com/200x120?text=Tiger" alt="Tiger" />
-          <h3>🐯 Tiger</h3>
-        </a>
-      </div>
-
-      <div class="animal-card">
-        <a href="animals/bear.html">
-          <img src="https://via.placeholder.com/200x120?text=Bear" alt="Bear" />
-          <h3>🐻 Bear</h3>
-        </a>
-      </div>
-
-      <div class="animal-card">
-        <a href="animals/wolf.html">
-          <img src="https://via.placeholder.com/200x120?text=Wolf" alt="Wolf" />
-          <h3>🐺 Wolf</h3>
-        </a>
-      </div>
-
-      <div class="animal-card">
-        <a href="animals/gorilla.html">
-          <img src="https://via.placeholder.com/200x120?text=Gorilla" alt="Gorilla" />
-          <h3>🦍 Gorilla</h3>
-        </a>
-      </div>
-
-    </div>
+  <main class="animal-grid">
+    <a class="animal-card" href="animals/lion.html">
+      <img src="assets/images/lion.jpg" alt="Lion">
+      <span>Lion</span>
+    </a>
+    <a class="animal-card" href="animals/wolf.html">
+      <img src="assets/images/wolf.jpg" alt="Wolf">
+      <span>Wolf</span>
+    </a>
   </main>
 
-  <footer class="container">
-    <small><a href="#">Privacy</a> • <a href="#">Contact</a></small>
+  <footer>
+    <p>© 2025 WhatIfTheyFought</p>
   </footer>
-
 </body>
 </html>
